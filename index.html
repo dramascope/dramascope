@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> DRAMA SCOPE REVIEW </title>
+    <link rel="icon" role="x-icon" href="images/icon-dsr.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <meta http-equiv="refresh" content="">
+</head>
+
+<script>
+    function toggleMenu() {
+    const menu = document.getElementById("mobileNav");
+    menu.classList.toggle("active");
+    }
+
+        function performMobileSearch() {
+        const input = document.getElementById("mobileSearchInput");
+
+        // ✅ Check if input exists
+        if (!input) {
+            alert("Input field not found. Please check the input ID.");
+            return;
+        }
+
+        const query = input.value.trim().toLowerCase(); // user input
+
+        
+        const cards = document.querySelectorAll(".movie-card");
+        let found = false;
+
+        // Reset styles
+        cards.forEach((card) => {
+            card.style.border = "";
+            card.style.background = "";
+        });
+
+        cards.forEach((card) => {
+            const title = (card.getAttribute("data-title") || "").toLowerCase().trim();
+
+            if (title.includes(query)) {
+            card.scrollIntoView({ behavior: "smooth", block: "center" });
+            card.style.border = "2px solid #0982ba";
+            card.style.background = "#f3faff";
+            found = true;
+
+            setTimeout(() => {
+                card.style.border = "";
+                card.style.background = "";
+            }, 3000);
+            }
+        });
+
+        if (!found) {
+            alert(`❌ No results found for "${query}"`);
+        }
+        }
+</script>
+
+
+
+ 
+<body>
+    
+    <header>
+
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/icon+text-dsr(2).png" width="120" alt="" style="position: relative;left: -5px;">
+                </a>
+            </div>
+
+            <div class="section">
+                <a href="index.html"><i class="fa-solid fa-house"></i> HOME </a>
+                <a href="#">Contact</a>
+                <a href="#">Network</a>
+                <a href="#social-section">Social Media</a>
+                <a href="#">About</a>
+                <!---<div class="about-info">
+                    <div class="head-about">
+                        <h5> About : </h5>
+                        <p>
+                            This is official website of drama scope review
+                        </p>
+                    </div>
+                    <div class="main-about">
+                        Created by Raza bagwan 
+                        <a href="https://instagram.com/razza.__18" style="color:black;"> 
+                            <i class="fa-brands fa-instagram fa-solid"></i> Instagram 
+                        </a>
+
+                </div>-->
+                <a href="https://youtube.com/@dramascopereview"><i class=" fa-shake fa-brands fa-youtube"></i> Youtube</a>
+                <a href="https://instagram.com/razza.__18" class=""> <i class="fa-brands fa-instagram fa-shake"></i> Instagram </a>
+            </div>
+
+            <div class="search">
+                <input type="search"  id="mobileSearchInput" placeholder="Search..." class="search-input">
+                <button  onclick="performMobileSearch()"class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </nav>
+
+        <!-- ✅ Clean Mobile Header -->
+
+        <header class="mobile-header">
+            <div class="mobile-header-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/icon+text-dsr(2).png" alt="Logo" width="100" />
+                    </a>
+                </div>
+
+                <div class="search-bar">
+                <input type="search" id="mobileSearchInput" placeholder="Search..." />
+                <button onclick="performMobileSearch()"><i class="fa fa-search"></i></button>
+                </div>
+
+                <div class="hamburger" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i>
+                </div>
+            </div>
+
+            <!-- Slide-out menu -->
+            <nav class="mobile-nav" id="mobileNav">
+                <span class="close-btn" onclick="toggleMenu()">×</span>
+                <a href="#">Home</a>
+                <a href="#">Contact</a>
+                <a href="#">Network</a>
+                <a href="#social-section">Social Media</a>
+                <a href="#">About</a>
+                <a href="#">YouTube</a>
+                <a href="#">Instagram</a>
+            </nav>
+        </header>
+
+
+        <!-- 📋 Mobile Menu -->
+   
+
+
+      
+    </header>
+       
+    <main>
+
+        <!--- HOME -->
+    
+      <section class="movie-section">
+  <h2 class="section-title">🎬 Latest Movie Reviews</h2>
+  <div class="movie-grid">
+
+    <!-- Movie Card -->
+    <div class="movie-card">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/8hQEwMQA1RY" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <h3>Final Destination 6 Review – Death Returns!</h3>
+      <ul>
+        <li><strong>Release Date:</strong> 2025 (Expected)</li>
+        <li><strong>Category:</strong> Horror, Supernatural, Thriller</li>
+      </ul>
+      <a href="#" class="download-btn">⬇️ Watch Full Review</a>
+    </div>
+<div class="movie-card">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/8hQEwMQA1RY" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <h3>Final Destination 6 Review – Death Returns!</h3>
+      <ul>
+        <li><strong>Release Date:</strong> 2025 (Expected)</li>
+        <li><strong>Category:</strong> Horror, Supernatural, Thriller</li>
+      </ul>
+      <a href="#" class="download-btn">⬇️ Watch Full Review</a>
+    </div>
+      <div class="movie-card">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/8hQEwMQA1RY" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <h3>Final Destination 6 Review – Death Returns!</h3>
+      <ul>
+        <li><strong>Release Date:</strong> 2025 (Expected)</li>
+        <li><strong>Category:</strong> Horror, Supernatural, Thriller</li>
+      </ul>
+      <a href="#" class="download-btn">⬇️ Watch Full Review</a>
+    </div>
+<div class="movie-card">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/8hQEwMQA1RY" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <h3>Final Destination 6 Review – Death Returns!</h3>
+      <ul>
+        <li><strong>Release Date:</strong> 2025 (Expected)</li>
+        <li><strong>Category:</strong> Horror, Supernatural, Thriller</li>
+      </ul>
+      <a href="#" class="download-btn">⬇️ Watch Full Review</a>
+    </div>
+    <!-- Copy this for more cards... -->
+
+  </div>
+</section>
+
+
+
+
+        <!--- SOCIAL MEDIA -->
+        <section class="social-section" id="social-section" style="display: none;">
+            <h2 class="section-title">Social Media</h2>
+            <div class="social-cards">
+                <!-- YouTube -->
+                <div class="card">
+                <img src="images/icon-dsr.png" alt="YouTube" />
+                <h3>Drama Scope Review</h3>
+                <a href="https://youtube.com/@dramascopereview" class="btn youtube" target="_blank">
+                    <i class="fa-brands fa-youtube"></i> Subscribe
+                </a>
+                </div>
+
+                <!-- Instagram -->
+                <div class="card">
+                <img src="images/insta-logo-colorful.png" alt="Instagram" />
+                <h3>@razza.__18</h3>
+                <a href="https://instagram.com/razza.__18" class="btn instagram" target="_blank">
+                    <i class="fa-brands fa-instagram"></i> Follow Me
+                </a>
+                </div>
+
+                <!-- Telegram -->
+                <div class="card">
+                <img src="images/poster-telegram.png" alt="Telegram" />
+                <h3>Drama Scope Channel</h3>
+                <a href="https://t.me/yourchannel" class="btn telegram" target="_blank">
+                    <i class="fa-brands fa-telegram"></i> Join Now
+                </a>
+                </div>
+            </div>
+        </section>
+
+        <!--- ABOUT -->
+        <div class="about-container"></div>
+
+    </main>
+
+    <footer></footer>
+
+
+
+
+
+
+</body>
+</html>
